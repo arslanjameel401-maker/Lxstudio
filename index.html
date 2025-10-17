@@ -1,0 +1,150 @@
+import React from "react";
+
+// Single-file React component for Arman Studio portfolio
+// Uses Tailwind CSS classes for styling (assumes Tailwind is set up in host project)
+
+export default function ArmanStudioPortfolio() {
+  return (
+    <div className="min-h-screen bg-black text-yellow-300 antialiased">
+      {/* Header */}
+      <header className="max-w-6xl mx-auto p-6 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-yellow-400 rounded-2xl flex items-center justify-center text-black font-bold text-lg">AS</div>
+          <div>
+            <h1 className="text-2xl font-extrabold text-white">Arman Studio</h1>
+            <p className="text-sm text-yellow-300/80">Dark cinematic photography • Weddings • Product & Modeling</p>
+          </div>
+        </div>
+        <nav className="hidden md:flex gap-6 text-sm">
+          <a href="#portfolio" className="hover:underline">Portfolio</a>
+          <a href="#services" className="hover:underline">Services</a>
+          <a href="#about" className="hover:underline">About</a>
+          <a href="#contact" className="hover:underline">Contact</a>
+        </nav>
+        <div className="md:hidden text-yellow-300">Menu</div>
+      </header>
+
+      {/* Hero */}
+      <section className="relative">
+        <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">Cinematic, moody & unforgettable photography</h2>
+            <p className="mt-4 text-yellow-200/90">Wedding coverage, product photography, modeling portfolios, and video ads — crafted with a dark cinematic aesthetic and bold yellow accents.</p>
+            <div className="mt-6 flex gap-4">
+              <a href="#contact" className="px-6 py-3 bg-yellow-400 text-black rounded-2xl font-semibold">Book a Shoot</a>
+              <a href="#portfolio" className="px-6 py-3 border border-yellow-400 rounded-2xl">See Portfolio</a>
+            </div>
+            <div className="mt-6 text-sm text-yellow-300/80">
+              <p>Call / WhatsApp: <a href="tel:+923220409615" className="underline">+92 322 0409615</a></p>
+            </div>
+          </div>
+          <div className="w-full rounded-2xl overflow-hidden shadow-2xl">
+            {/* Placeholder hero image - replace with client's hero photo */}
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200&q=80" alt="Hero" className="w-full h-96 object-cover brightness-75" />
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section id="portfolio" className="max-w-6xl mx-auto px-6 py-12">
+        <h3 className="text-3xl font-bold text-white">Selected Work</h3>
+        <p className="text-yellow-300/70 mt-2">A curated selection showcasing weddings, product shoots and cinematic portraits.</p>
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Replace src with real images from the studio */}
+          {[1,2,3,4,5,6].map((i) => (
+            <div key={i} className="group overflow-hidden rounded-2xl bg-gray-900">
+              <img src={`https://source.unsplash.com/collection/190727/${400 + i}x${300 + i}`} alt={`Portfolio ${i}`} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div className="p-4">
+                <h4 className="text-white font-semibold">Project Title {i}</h4>
+                <p className="text-yellow-300/70 text-sm">Short description — cinematic, moody, high-contrast.</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="bg-black/60 py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-3xl font-bold text-white">Services</h3>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl border border-yellow-700/30">
+              <h4 className="text-xl font-semibold text-white">Wedding Coverage</h4>
+              <p className="text-yellow-300/70 mt-2">Full-day coverage, cinematic highlights, raw footage on request.</p>
+              <p className="mt-4 font-semibold">Packages from: <span className="text-white">Contact for price</span></p>
+            </div>
+            <div className="p-6 rounded-2xl border border-yellow-700/30">
+              <h4 className="text-xl font-semibold text-white">Product Photography</h4>
+              <p className="text-yellow-300/70 mt-2">Studio set-ups, white background, lifestyle & promotional shots.</p>
+              <p className="mt-4 font-semibold">Contact for quote</p>
+            </div>
+            <div className="p-6 rounded-2xl border border-yellow-700/30">
+              <h4 className="text-xl font-semibold text-white">Modeling & Portfolio</h4>
+              <p className="text-yellow-300/70 mt-2">Editorial-style shoots, retouching, and portfolio curation.</p>
+              <p className="mt-4 font-semibold">Session starting at: <span className="text-white">Contact</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 className="text-3xl font-bold text-white">About Arman Studio</h3>
+            <p className="text-yellow-300/80 mt-4">Arman Studio creates dark, cinematic imagery with bold storytelling. We specialize in weddings, product photography and model portfolios, giving each project a dramatic and polished look.</p>
+            <ul className="mt-4 text-sm text-yellow-200/80 space-y-2">
+              <li>✔ Professional lighting & studio setup</li>
+              <li>✔ Advanced retouching & color grading</li>
+              <li>✔ Fast delivery & print-ready files</li>
+            </ul>
+          </div>
+          <div className="w-full rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1502951453269-57f85a1f5c4a?w=1200&q=80" alt="About" className="w-full h-72 object-cover" />
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-black/70 py-12">
+        <div className="max-w-4xl mx-auto px-6">
+          <h3 className="text-3xl font-bold text-white">Get in touch</h3>
+          <p className="text-yellow-300/80 mt-2">For bookings, pricing or questions — reach out via call, WhatsApp or the form.</p>
+
+          <div className="mt-6 grid md:grid-cols-2 gap-6">
+            <div className="p-6 rounded-2xl border border-yellow-700/30">
+              <h4 className="text-xl font-semibold text-white">Contact Info</h4>
+              <p className="mt-3 text-yellow-300/80">Phone / WhatsApp: <a href="tel:+923220409615" className="underline">+92 322 0409615</a></p>
+              <p className="mt-2 text-yellow-300/80">Studio: Arman Studio</p>
+              <p className="mt-2 text-yellow-300/80">Portfolio Theme: Dark cinematic (Yellow & Black)</p>
+            </div>
+
+            <form className="p-6 rounded-2xl border border-yellow-700/30 bg-gray-900/40" onSubmit={(e)=>{e.preventDefault(); alert('Form submitted (replace with real submit handler)');}}>
+              <label className="block text-yellow-300/80 text-sm">Name</label>
+              <input className="mt-1 w-full rounded-lg p-3 bg-black/60 text-white" placeholder="Aap ka naam" />
+
+              <label className="block text-yellow-300/80 text-sm mt-4">Email / WhatsApp</label>
+              <input className="mt-1 w-full rounded-lg p-3 bg-black/60 text-white" placeholder="Email ya WhatsApp number" />
+
+              <label className="block text-yellow-300/80 text-sm mt-4">Message</label>
+              <textarea className="mt-1 w-full rounded-lg p-3 bg-black/60 text-white" rows={4} placeholder="Brief details about the shoot" />
+
+              <div className="mt-4">
+                <button type="submit" className="px-5 py-3 bg-yellow-400 text-black rounded-xl font-semibold">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="mt-12 border-t border-yellow-800/30">
+        <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-yellow-300/80">
+          <div>© {new Date().getFullYear()} Arman Studio — All rights reserved.</div>
+          <div className="mt-3 md:mt-0">Designed for dark cinematic portfolios • <a href="#contact" className="underline">Contact</a></div>
+        </div>
+      </footer>
+
+    </div>
+  );
+}
